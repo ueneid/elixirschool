@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html lang="{{ page.lang }}{% if page.locale.lang_country %}-{{ page.locale.lang_country }}{% endif %}">
+	{% include _head.html %}
+	<body>
+		<!-- Wrapper -->
+		<div id="wrapper">
+			<!-- Main -->
+			<div id="main">
+				<div class="inner">
+					<!-- Header -->
+					<header id="header">
+					  <a href="/" class="logo"><strong>Elixir School</strong></a>
+					  {% include share-icons.html %}
+					</header>
+
+					{{ content }}
+
+				</div>
+			</div>
+			{% include _sidebar.html %}
+		</div>
+		<!-- Scripts -->
+		{% js main %}
+		<!--[if lte IE 8]>{% js ie/respond.min.js %}<script src="assets/js/ie/respond.min.js"></script><![endif]-->
+	</body>
+</html>

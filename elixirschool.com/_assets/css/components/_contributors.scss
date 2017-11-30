@@ -1,0 +1,60 @@
+#contributors {
+  a {
+    margin: 0 5px 0 0;
+    border-bottom: 0px;
+  }
+  a:last-child{
+    margin: 0;
+  }
+
+  img {
+    border: 1px dashed #4B365F;
+    padding: 4px;
+    margin: 0 0 25px 0;
+    display: inline;
+    width: 50px;
+    height: 50px;
+
+  }
+
+  /* tooltip */
+  .tooltip {
+    position: relative;
+    display: inline-block;
+  }
+
+  .tooltip .tooltiptext {
+    width: 120px;
+    //background-color: rgba(255,255,255,0);
+    background-color: rgba(75, 54, 95, 0.5);
+    //color: #4B365F;
+    color: #fff;
+
+    text-align: center;
+    padding: 5px 0;
+    border: 1px solid #4B365F;
+    border-radius: 6px;
+
+    position: absolute;
+    z-index: 1;
+
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.5s linear;
+  }
+
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.5s linear;
+  }
+
+  .tooltip .tooltiptext {
+    width: 120px;
+    font-size: 0.7em;
+    top: 67%;
+    left: 50%;
+    /* Use half of the width (120/2 = 60), to center the tooltip */
+    margin-left: -60px;
+  }
+}

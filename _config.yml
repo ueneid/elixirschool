@@ -1,6 +1,8 @@
 # Setup
 baseurl: /
-url: https://elixirschool.com
+
+source: elixirschool.com
+
 permalink: pretty
 default_lang: en
 exclude_from_localization: []

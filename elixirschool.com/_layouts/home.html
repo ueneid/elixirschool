@@ -1,0 +1,29 @@
+---
+layout: default
+---
+<section id="section-page"{% if page.locale.script_direction %} class="{{page.locale.script_direction}}"{%endif%}>
+<div class="content">
+{{ content }}
+</div>
+</section>
+
+<!-- Section -->
+<section>
+  <header class="major">
+    <h2>{{ page.featureset.title }}</h2>
+  </header>
+  <div class="features">
+    {% for feature in page.featureset.features %}
+    <article>
+      <span class="icon fa-{{feature.icon}}"></span>
+      <div class="content">
+        <h3>{{ feature.name }}</h3>
+        <p>{{ feature.description}}</p>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+{% include section-contributors.html %}
+{% include section-pagination.html %}
