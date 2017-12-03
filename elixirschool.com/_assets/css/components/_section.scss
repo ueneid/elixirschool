@@ -19,12 +19,12 @@
 			font-weight: _font(weight-heading-alt);
 			letter-spacing: _font(kerning-heading);
 			margin-top: -0.5em;
-			text-transform: uppercase;
+
 		}
 
 		&.major {
 			> :last-child {
-				border-bottom: solid 3px _palette(accent);
+				border-bottom: solid 3px _purple(fg-hov);
 				display: inline-block;
 				margin: 0 0 _size(element-margin) 0;
 			 	padding: 0 0.75em 0.5em 0;

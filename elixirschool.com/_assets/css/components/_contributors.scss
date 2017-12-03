@@ -8,7 +8,7 @@
   }
 
   img {
-    border: 1px dashed #4B365F;
+    border: 1px dashed _purple(fg-bold);
     padding: 4px;
     margin: 0 0 25px 0;
     display: inline;
@@ -25,14 +25,12 @@
 
   .tooltip .tooltiptext {
     width: 120px;
-    //background-color: rgba(255,255,255,0);
-    background-color: rgba(75, 54, 95, 0.5);
-    //color: #4B365F;
+    background-color: _purple(bg);
     color: #fff;
 
     text-align: center;
     padding: 5px 0;
-    border: 1px solid #4B365F;
+    border: 1px solid _palette(fg-bold);
     border-radius: 6px;
 
     position: absolute;

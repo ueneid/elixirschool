@@ -43,8 +43,8 @@
 		}
 
 		&:focus {
-			border-color: _palette(accent);
-			box-shadow: 0 0 0 1px _palette(accent);
+			border-color: _purple(fg);
+			box-shadow: 0 0 0 1px _purple(fg);
 		}
 	}
 
@@ -134,8 +134,8 @@
 
 		&:focus + label {
 			&:before {
-				border-color: _palette(accent);
-				box-shadow: 0 0 0 1px _palette(accent);
+				border-color: _purple(fg);
+				box-shadow: 0 0 0 1px _purple(fg);
 			}
 		}
 	}

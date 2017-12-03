@@ -8,7 +8,7 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,400italic,600italic|Roboto+Slab:400,700');
 section .content {
 	h2{
-		border-bottom: solid 3px _palette(accent);
+		border-bottom: solid 3px _purple(fg-hov);
 		display: inline-block;
 		margin: 0 0 _size(element-margin) 0;
 		padding: 0 0.75em 0.5em 0;

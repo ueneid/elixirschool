@@ -75,7 +75,7 @@
 				position: relative;
 
 				&:before {
-					color: _palette(accent);
+					color: _purple(fg);
 					display: inline-block;
 					font-size: 1.5em;
 					height: 1.125em;
@@ -204,15 +204,15 @@
 					text-align: center;
 
 					&.active {
-						background-color: _palette(accent);
+						background-color: _purple(fg);
 						color: _palette(bg) !important;
 
 						&:hover {
-							background-color: lighten(_palette(accent), 3);
+							background-color: lighten(_purple(fg), 3);
 						}
 
 						&:active {
-							background-color: darken(_palette(accent), 3);
+							background-color: darken(_purple(fg), 3);
 						}
 					}
 				}

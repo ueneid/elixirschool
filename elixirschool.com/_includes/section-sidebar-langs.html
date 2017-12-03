@@ -1,5 +1,6 @@
-<!-- Section -->
-<section>
+{% if page.lang %}
+<!-- Locales Section -->
+<section id="search" class="alt">
   <div id="locales">
 
       {% for _interlang_chapter in site.tree[page.lang][page.section][page.chapter]['interlang'] %}
@@ -12,6 +13,7 @@
           <a href="{{ _interlang_chapter[1]['url'] }}" {% if _lang_name %}title="{{ _lang_name }}"{% endif %}>{{ _lang }}</a>
         {% endif %}
       {% endfor %}
-    
+
   </div>
 </section>
+{% endif %}

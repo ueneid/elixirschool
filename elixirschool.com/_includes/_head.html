@@ -20,11 +20,14 @@
   <meta name="msapplication-config" content="{{ site.url }}{% asset_path 'favicons/browserconfig.xml' %}">
   <meta name="theme-color" content="#ffffff">
 
-  {% if page.locale.project.title == page.title or page.title == nil %}
-    <title>{{ page.locale.project.title }}</title>
+  {% assign title = locale.project.title %}
+  {% unless page.title == locale.project.title or page.title == nil %}
+    {% assign title = page.title  | append: " &middot; " | append: title %}
   {% else %}
-    <title>{{ page.title }} &middot; {{ page.locale.project.title }}</title>
-  {% endif %}
+
+  {% endunless %}
+  <title>{{ title }}</title>
+
 
   <!-- CSS -->
   <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->

@@ -1,11 +1,11 @@
 # Setup
 baseurl: /
-
+url: https://elixirschool.com
+permalink: /appendix/articles/:title/
 source: elixirschool.com
-
-permalink: pretty
 default_lang: en
 exclude_from_localization: []
+exclude_from_chapters: ['appendix.html', 'archive.html']
 
 # Author
 author:

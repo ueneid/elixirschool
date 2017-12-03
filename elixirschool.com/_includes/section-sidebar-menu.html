@@ -1,67 +1,48 @@
+
 <!-- Menu -->
-  <nav id="menu">
-    <header class="major">
-      <h2>Menu</h2>
-      <p>{{ page.locale.project.description }}</p>
-    </header>
-    <ul>
-    {% for sections in site.contents[page.lang] %}
-      {% assign _section = sections[0] | strip %}
-      {% if page.section == _section or (page.section == "home" and _section == "basics") %}
-        {% assign opened = true %}
-      {% else %}
-        {% assign opened = false %}
-      {% endif %}
-      {% if _section != 'home' %}
-        {% for _chapter in sections[1] %}
-          {% if forloop.first %}
-          <li>
-            <span class="opener{% if opened %} active{% endif %}">{{ page.locale.sections[_section] }}</span>
-            <ul>
-          {% endif %}
+<nav id="menu">
+  <header class="major">
+    <h2>Menu</h2>
+    <p>{{ locale.project.description }}</p>
+  </header>
+  <ul>
 
-              <li>
-                {% if page.url == _chapter[1].url %}
-                  <span class="sidebar-lesson active">{{ _chapter[1].chapter_number }}. {{ _chapter[1].title }}</span>
-                {% else %}
-                  <a class="sidebar-lesson" href="{{ _chapter[1].url }}">{{ _chapter[1].chapter_number }}. {{ _chapter[1].title }}</a>
-                {% endif %}
-              </li>
-
-          {% if forloop.last %}
-            </ul>
-          </li>
-          {% endif%}
-        {% endfor %}
-      {% endif %}
-    {% endfor %}
-    </ul>
-    <!-- <ul>
-      <li><a href="index.html">Homepage</a></li>
-      <li><a href="generic.html">Generic</a></li>
-      <li><a href="elements.html">Elements</a></li>
-      <li>
-        <span class="opener">Submenu</span>
-        <ul>
-          <li><a href="#">Lorem Dolor</a></li>
-          <li><a href="#">Ipsum Adipiscing</a></li>
-          <li><a href="#">Tempus Magna</a></li>
-          <li><a href="#">Feugiat Veroeros</a></li>
-        </ul>
-      </li>
-      <li><a href="#">Etiam Dolore</a></li>
-      <li><a href="#">Adipiscing</a></li>
-      <li>
-        <span class="opener">Another Submenu</span>
-        <ul>
-          <li><a href="#">Lorem Dolor</a></li>
-          <li><a href="#">Ipsum Adipiscing</a></li>
-          <li><a href="#">Tempus Magna</a></li>
-          <li><a href="#">Feugiat Veroeros</a></li>
-        </ul>
-      </li>
-      <li><a href="#">Maximus Erat</a></li>
-      <li><a href="#">Sapien Mauris</a></li>
-      <li><a href="#">Amet Lacinia</a></li>
-    </ul> -->
-  </nav>
+  {% for sections in site.contents[language] %}
+    {% assign section = sections[0] | strip %}
+    {% assign chapters = sections[1] %}
+    {% if page.section %}
+      {% assign visiting = page.section %}
+    {% else %}
+      {% assign visiting = "appendix" %}
+    {% endif %}
+    {% if visiting == section or (visiting == "home" and section == "basics") %}
+      {% assign opened = true %}
+    {% else %}
+      {% assign opened = false %}
+    {% endif %}
+    {% unless section == "home" %}
+      {% for chapter in chapters %}
+        {% if forloop.first %}
+        <li>
+          <span class="opener{% if opened %} active{% endif %}{% unless locale.disable_transform %} up{%endunless%}">{{ locale.sections[section] }}</span>
+          <ul>
+        {% endif %}
+            <li>
+              {% if page.url == chapter[1].url %}
+              <span class="active">{{ chapter[1].chapter_number }}. {{ chapter[1].title }}</span>
+              {% else %}
+              <a href="{{ chapter[1].url }}">{{ chapter[1].chapter_number }}. {{ chapter[1].title }}</a>
+              {% endif %}
+            </li>
+        {% if forloop.last %}
+          </ul>
+        </li>
+        {% endif%}
+      {% endfor %}
+    {% endunless %}
+  {% endfor %}
+    <li>
+      <a href="/appendix/" class="{% unless locale.disable_transform %} up {%endunless%}{% if page.layout == "appendix" or page.layout == "post" %}active{% endif %}">{{ site.data['locales']['en']['sections']['appendix']}}</a>
+    </li>
+  </ul>
+</nav>

@@ -39,6 +39,15 @@
 		fg-bold:			#3d4449,
 		fg-light:			#9fa3a6,
 		border:				rgba(210,215,217,0.75),
-		border-bg:			transparentize(#e6ebed, 0.75),
+		border-bg:		transparentize(#e6ebed, 0.75),
 		accent:				#f56a6a
+	);
+// Elixir School
+	$purple: (
+		bg: 				lighten(#4A365F, 45%),
+		fg:					lighten(#4A365F, 10%),
+		fg-bold:		darken(#4A365F, 5%),
+		fg-alt:			lighten(#4A365F, 20%),
+		fg-hov:			lighten(#4A365F, 30%),
+		accent: 		#F07E6B
 	);
