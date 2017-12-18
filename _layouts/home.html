@@ -1,0 +1,14 @@
+---
+layout: default
+---
+{% include section-home-banner.html %}
+<!-- Content again -->
+<section id="section-page"{% if page.locale.script_direction %} class="{{page.locale.script_direction}}"{%endif%}>
+<div class="content">
+{{ content }}
+</div>
+</section>
+<!-- Content again -->
+{% include section-home-features.html %}
+{% include section-contributors.html %}
+{% include section-pagination.html %}
